@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="About" userStatus="Logged" isLoggedIn="true" />
+  <HelloWorld msg="Gokhan" userStatus="Karatas" isLoggedIn="true" />
 </template>
 
 <script>
