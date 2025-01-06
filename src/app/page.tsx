@@ -1,11 +1,24 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { PageContainer } from "@/components/layout/page-container";
+import { HeroSection } from "@/components/home/hero/hero-section";
+import { WorkExperience } from "@/components/home/work/work-experience";
+import { ArticlesSection } from "@/components/home/articles/articles-section";
+import { SourcesSection } from "@/components/home/sources/sources-section";
+import { TravelSection } from "@/components/home/travel/travel-section";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-     <Button>Click me</Button>
-     <Button>Click me</Button>
-    </div>
+    <PageContainer>
+      <main className="container mx-auto px-4 py-8 space-y-24 flex flex-col min-h-screen">
+        <HeroSection />
+        <div className="flex-grow grid grid-cols-1 gap-24">
+          <WorkExperience />
+          <ArticlesSection />
+          <SourcesSection />
+          <TravelSection />
+        </div>
+      </main>
+    </PageContainer>
   );
 }
