@@ -6,6 +6,7 @@ import { TechnicalSkills } from "@/components/about/technical-skills";
 import { WorkExperience } from "@/components/home/work/work-experience";
 import { HeroSection } from "@/components/home/hero/hero-section";
 import { JourneySection } from "@/components/about/journey-section";
+import { PageContainer } from "@/components/layout/page-container";
 import { Project } from "@/types";
 import { useEffect } from "react";
 
@@ -41,14 +42,16 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-16">
-      <HeroSection variant="about" />
-      <JourneySection />
-      <div id="work-experience">
-        <WorkExperience variant="full" />
+    <PageContainer>
+      <div className="container mx-auto px-4 py-8 space-y-16">
+        <HeroSection variant="about" />
+        <JourneySection />
+        <div id="work-experience">
+          <WorkExperience variant="full" />
+        </div>
+        <TechnicalSkills />
+        <ProjectsSection projects={projects} title="My Projects" />
       </div>
-      <TechnicalSkills />
-      <ProjectsSection projects={projects} title="My Projects" />
-    </div>
+    </PageContainer>
   );
 }

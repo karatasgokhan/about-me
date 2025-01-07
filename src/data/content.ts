@@ -12,6 +12,7 @@ interface Article {
   date: string;
   excerpt: string;
   image: string;
+  content?: string;
 }
 
 interface Source {
@@ -54,34 +55,84 @@ export const workExperience: WorkExperience[] = [
   },
 ];
 
-
 export const articles: Article[] = [
   {
-    title: "Optimizing Next.js Performance with SSR and ISR",
-    date: "June 5, 2023",
+    title: "Building Modern Web Applications with Next.js",
+    date: "2024-01-05",
     excerpt:
-      "A deep dive into how server-side rendering (SSR) and incremental static regeneration (ISR) can enhance performance in Next.js applications.",
+      "A comprehensive guide to building scalable applications using Next.js and React",
     image:
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    content: `
+      // Add your full article content here
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua...
+    `,
   },
   {
-    title: "Mastering Jest and Cypress for Frontend Testing",
-    date: "May 10, 2023",
+    title: "State Management in React: A Deep Dive",
+    date: "2023-12-15",
     excerpt:
-      "Explore advanced Jest and Cypress techniques for creating highly reliable and scalable frontend tests.",
+      "Exploring different state management solutions in React applications",
     image:
-      "https://images.unsplash.com/photo-1535379453347-1ffd615e2e08?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80",
+    content: `
+      // Add your full article content here
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua...
+    `,
   },
   {
-    title: "Building Scalable UI Components with Styled-Components",
-    date: "April 18, 2023",
+    title: "Mastering TypeScript in Frontend Development",
+    date: "2023-12-01",
     excerpt:
-      "Learn how to create scalable, reusable, and theme-friendly UI components with Styled-Components in modern frontend development.",
+      "Best practices and advanced techniques for TypeScript in frontend projects",
     image:
-      "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=800&q=80",
+    content: `
+      // Add your full article content here
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua...
+    `,
+  },
+  {
+    title: "The Power of Tailwind CSS in Modern Web Design",
+    date: "2023-11-20",
+    excerpt:
+      "How Tailwind CSS revolutionizes the way we style web applications",
+    image:
+      "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=800&q=80",
+    content: `
+      // Add your full article content here
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua...
+    `,
+  },
+  {
+    title: "Optimizing Performance in React Applications",
+    date: "2023-11-10",
+    excerpt: "Practical strategies for improving React application performance",
+    image:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+    content: `
+      // Add your full article content here
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua...
+    `,
+  },
+  {
+    title: "Building Accessible Web Applications",
+    date: "2023-11-01",
+    excerpt: "A guide to implementing web accessibility in modern applications",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    content: `
+      // Add your full article content here
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua...
+    `,
   },
 ];
-
 
 export const sources: Source[] = [
   {
@@ -120,7 +171,6 @@ export const sources: Source[] = [
     link: "https://javascriptweekly.com",
   },
 ];
-
 
 export const tripPhotos: TripPhoto[] = [
   {

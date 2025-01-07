@@ -1,8 +1,10 @@
+"use client";
+
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 import { Article } from "@/types";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 interface ArticleCardProps {
   article: Article;
@@ -10,39 +12,31 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, index }: ArticleCardProps) {
+  const slug = article.title.toLowerCase().replace(/\s+/g, "-");
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
     >
-      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl">
-        <div className="relative aspect-video">
-          <Image
-            src={article.image}
-            alt={article.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
-          />
-        </div>
-        <CardHeader>
-          <CardTitle className="line-clamp-1">{article.title}</CardTitle>
-          <p className="text-sm text-gray-500">{article.date}</p>
-        </CardHeader>
-        <CardContent className="flex-grow">
-          <p className="line-clamp-3 text-gray-700">{article.excerpt}</p>
-        </CardContent>
-        <CardFooter>
-          <Button variant="ghost" className="w-full group">
-            <span className="relative">
-              Read More
-              <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </span>
-          </Button>
-        </CardFooter>
-      </Card>
+      <Link href={`/articles/${slug}`}>
+        <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div className="relative h-48 w-full">
+            <Image
+              src={article.image}
+              alt={article.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <CardContent className="p-6 flex flex-col flex-grow">
+            <h3 className="text-xl font-bold mb-2">{article.title}</h3>
+            <p className="text-sm text-gray-500 mb-4">{article.date}</p>
+            <p className="text-gray-600 flex-grow">{article.excerpt}</p>
+          </CardContent>
+        </Card>
+      </Link>
     </motion.div>
   );
-} 
+}

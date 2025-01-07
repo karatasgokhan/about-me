@@ -14,7 +14,7 @@ export default function Home() {
         <HeroSection variant="home" />
         <div className="flex-grow grid grid-cols-1 gap-24">
           <WorkExperience variant="preview" />
-          <ArticlesSection />
+          <ArticlesSection variant="preview" />
           <SourcesSection />
           <TravelSection />
         </div>

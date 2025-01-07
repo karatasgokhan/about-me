@@ -11,6 +11,7 @@ export interface Article {
   date: string;
   excerpt: string;
   image: string;
+  content?: string;
 }
 
 export interface Source {

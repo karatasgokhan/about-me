@@ -1,7 +1,14 @@
-export function PageContainer({ children }: { children: React.ReactNode }) {
+import { MainNav } from "./main-nav";
+
+interface PageContainerProps {
+  children: React.ReactNode;
+}
+
+export function PageContainer({ children }: PageContainerProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {children}
+    <div className="min-h-screen bg-background">
+      <MainNav />
+      <div className="pt-16">{children}</div>
     </div>
   );
 }
