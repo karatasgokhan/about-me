@@ -8,10 +8,10 @@ WORKDIR /app
 RUN apk add --no-cache yarn
 
 # Copy package files
-COPY package*.json yarn.lock ./
+COPY package*.json ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
 # Copy project files
 COPY . .
