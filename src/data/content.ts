@@ -214,3 +214,194 @@ export const tripPhotos: TripPhoto[] = [
     location: "Queensland, Australia",
   },
 ];
+
+export const travelLocations: TravelLocation[] = [
+  {
+    id: "paris-france",
+    name: "Paris, France",
+    description:
+      "The City of Light captivates with its elegant architecture, world-renowned cuisine, and timeless charm. From the iconic Eiffel Tower to the charming streets of Montmartre, every corner tells a story of art, history, and romance.",
+    coverImage:
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80",
+        alt: "Eiffel Tower at sunset",
+        location: "Eiffel Tower",
+        description:
+          "The iconic symbol of Paris, especially beautiful during sunset",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+        alt: "Champs-Élysées",
+        location: "Champs-Élysées",
+        description:
+          "The most famous avenue in Paris, lined with luxury shops and cafes",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?auto=format&fit=crop&w=800&q=80",
+        alt: "Notre-Dame Cathedral",
+        location: "Notre-Dame",
+        description:
+          "The historic Gothic cathedral, a masterpiece of French architecture",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1581262208435-41726149a759?auto=format&fit=crop&w=800&q=80",
+        alt: "Louvre Museum",
+        location: "The Louvre",
+        description: "World's largest art museum, home to the Mona Lisa",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1551887196-72e32bfc7bf3?auto=format&fit=crop&w=800&q=80",
+        alt: "Montmartre",
+        location: "Montmartre",
+        description:
+          "Artistic neighborhood with the stunning Sacré-Cœur Basilica",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1597910037310-7dd8ddb93e24?auto=format&fit=crop&w=800&q=80",
+        alt: "Palace of Versailles",
+        location: "Versailles",
+        description: "The opulent royal château and gardens",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1511739172509-0e5da94c7726?auto=format&fit=crop&w=800&q=80",
+        alt: "Arc de Triomphe",
+        location: "Arc de Triomphe",
+        description: "Historic monument honoring those who fought for France",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1574857035028-5a91e3494469?auto=format&fit=crop&w=800&q=80",
+        alt: "Seine River",
+        location: "Seine River",
+        description: "The heart of Paris, perfect for romantic boat cruises",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?auto=format&fit=crop&w=800&q=80",
+        alt: "Palais Garnier",
+        location: "Opera House",
+        description:
+          "The magnificent Paris Opera House, inspiration for Phantom of the Opera",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1590928536252-138bacdb83ed?auto=format&fit=crop&w=800&q=80",
+        alt: "Luxembourg Gardens",
+        location: "Luxembourg Gardens",
+        description:
+          "Beautiful palace gardens perfect for a Parisian afternoon",
+      },
+    ],
+  },
+  {
+    id: "swiss-alps",
+    name: "Swiss Alps",
+    description:
+      "A majestic mountain range offering breathtaking views, world-class skiing, and charming alpine villages. The Swiss Alps combine natural beauty with luxury and adventure.",
+    coverImage:
+      "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?auto=format&fit=crop&w=800&q=80",
+        alt: "Mountain view",
+        location: "Swiss Alps",
+        description: "Panoramic view of snow-capped peaks",
+      },
+    ],
+  },
+  {
+    id: "bali-indonesia",
+    name: "Bali, Indonesia",
+    description:
+      "A tropical paradise that blends spiritual tranquility with stunning natural beauty. From pristine beaches to ancient temples, Bali offers a unique cultural experience.",
+    coverImage:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+        alt: "Beach sunset",
+        location: "Bali",
+        description: "Spectacular sunset view over the Indian Ocean",
+      },
+    ],
+  },
+  {
+    id: "tokyo-japan",
+    name: "Tokyo, Japan",
+    description:
+      "A city where ultra-modern technology meets ancient traditions. Tokyo's vibrant culture, innovative cuisine, and fascinating contrasts create an unforgettable urban experience.",
+    coverImage:
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
+        alt: "Tokyo skyline",
+        location: "Tokyo",
+        description: "Modern Tokyo skyline at night",
+      },
+    ],
+  },
+  {
+    id: "nairobi-kenya",
+    name: "Nairobi, Kenya",
+    description:
+      "The gateway to Africa's wildlife wonders. Nairobi combines urban sophistication with incredible natural experiences and opportunities to see amazing wildlife.",
+    coverImage:
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
+        alt: "Safari animals",
+        location: "Nairobi",
+        description: "Wildlife in their natural habitat",
+      },
+    ],
+  },
+  {
+    id: "reykjavik-iceland",
+    name: "Reykjavik, Iceland",
+    description:
+      "A land of fire and ice, where natural wonders abound. From the Northern Lights to geothermal springs, Iceland offers otherworldly experiences.",
+    coverImage:
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80",
+        alt: "Northern Lights",
+        location: "Reykjavik",
+        description: "The magical Northern Lights display",
+      },
+    ],
+  },
+  {
+    id: "rome-italy",
+    name: "Rome, Italy",
+    description:
+      "The Eternal City, where ancient history meets modern life. Rome's architecture, art, and cuisine create an immersive journey through time.",
+    coverImage:
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+        alt: "Colosseum",
+        location: "Rome",
+        description: "The iconic Colosseum at sunset",
+      },
+    ],
+  },
+  {
+    id: "queensland-australia",
+    name: "Queensland, Australia",
+    description:
+      "Home to the Great Barrier Reef and stunning coastal landscapes. Queensland offers unique marine life experiences and beautiful tropical settings.",
+    coverImage:
+      "https://images.unsplash.com/photo-1587139223877-04cb899fa3e8?auto=format&fit=crop&w=800&q=80",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1587139223877-04cb899fa3e8?auto=format&fit=crop&w=800&q=80",
+        alt: "Great Barrier Reef",
+        location: "Queensland",
+        description: "The vibrant marine life of the Great Barrier Reef",
+      },
+    ],
+  },
+];

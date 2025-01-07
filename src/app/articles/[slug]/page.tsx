@@ -5,17 +5,10 @@ import { articles } from "@/data/content";
 import { PageContainer } from "@/components/layout/page-container";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { createSlug } from "@/lib/utils/slug";
 
 interface ArticlePageProps {
   params: { slug: string };
-}
-
-// Create a helper function for consistent slug generation
-function createSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {

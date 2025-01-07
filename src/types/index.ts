@@ -25,6 +25,7 @@ export interface TravelPhoto {
   src: string;
   alt: string;
   location: string;
+  description?: string;
 }
 
 export interface Project {
@@ -33,4 +34,12 @@ export interface Project {
   technologies: string[];
   link?: string;
   image?: string;
+}
+
+export interface TravelLocation {
+  id: string;
+  name: string;
+  description: string;
+  coverImage: string;
+  photos: TravelPhoto[];
 }

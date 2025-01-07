@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Article } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { createSlug } from "@/lib/utils/slug";
 
 interface ArticleCardProps {
   article: Article;
@@ -12,10 +13,7 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, index }: ArticleCardProps) {
-  const slug = article.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+  const slug = createSlug(article.title);
 
   return (
     <motion.div
