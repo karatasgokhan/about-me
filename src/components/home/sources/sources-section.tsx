@@ -3,8 +3,12 @@
 import { motion } from "framer-motion";
 import { sources } from "@/data/content";
 import { SourceCard } from "./source-card";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function SourcesSection() {
+  const displayedSources = sources.slice(0, 6);
+
   return (
     <section className="py-12">
       <motion.h2
@@ -15,10 +19,24 @@ export function SourcesSection() {
       >
         Sources I Follow
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sources.map((source, index) => (
-          <SourceCard key={source.name} source={source} index={index} />
-        ))}
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedSources.map((source, index) => (
+            <SourceCard key={source.name} source={source} index={index} />
+          ))}
+        </div>
+        {sources.length > 6 && (
+          <div className="text-center mt-8">
+            <Link href="/sources">
+              <Button
+                variant="outline"
+                className="hover:bg-gray-100 transition-colors"
+              >
+                View All Sources
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

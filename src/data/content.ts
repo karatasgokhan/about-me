@@ -170,6 +170,41 @@ export const sources: Source[] = [
       "A newsletter covering the latest news and updates in the JavaScript ecosystem.",
     link: "https://javascriptweekly.com",
   },
+  {
+    name: "React Newsletter",
+    icon: "⚛️",
+    description:
+      "Weekly React news, articles, and tips covering the latest in React development.",
+    link: "https://reactnewsletter.com",
+  },
+  {
+    name: "Frontend Focus",
+    icon: "🎯",
+    description:
+      "A weekly newsletter with the latest frontend news, articles, and tutorials.",
+    link: "https://frontendfoc.us",
+  },
+  {
+    name: "Web.dev",
+    icon: "🌐",
+    description:
+      "Guidance and updates from Google's web platform team on modern web development.",
+    link: "https://web.dev",
+  },
+  {
+    name: "Next.js Blog",
+    icon: "▲",
+    description:
+      "Official blog covering Next.js updates, features, and best practices.",
+    link: "https://nextjs.org/blog",
+  },
+  {
+    name: "TypeScript Weekly",
+    icon: "📘",
+    description:
+      "Weekly newsletter featuring TypeScript news, tips, and advanced techniques.",
+    link: "https://typescript-weekly.com",
+  },
 ];
 
 export const tripPhotos: TripPhoto[] = [

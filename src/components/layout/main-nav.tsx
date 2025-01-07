@@ -9,6 +9,7 @@ const navItems = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
   { path: "/articles", label: "Articles" },
+  { path: "/sources", label: "Sources" },
 ];
 
 export function MainNav() {
