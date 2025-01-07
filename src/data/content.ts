@@ -440,3 +440,135 @@ export const travelLocations: TravelLocation[] = [
     ],
   },
 ];
+
+export const favoriteBooks: Book[] = [
+  {
+    title: "Clean Code",
+    author: "Robert C. Martin",
+    cover:
+      "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A handbook of agile software craftsmanship that has helped countless developers write better code.",
+    genre: "Software Development",
+    subject: "Software Craftsmanship and Code Quality",
+    myPerspective:
+      "This book completely changed my approach to writing code. While some examples might be dated, the core principles about writing clean, maintainable code are timeless. It helped me understand that code is read far more often than it is written, and therefore readability should be a top priority.",
+    dateRead: "2023-06-15",
+    rating: 5,
+    personalNotes: {
+      favoriteQuotes: [
+        {
+          quote:
+            "Clean code always looks like it was written by someone who cares.",
+          page: 14,
+        },
+        {
+          quote: "The only way to go fast is to go well.",
+          context: "On the importance of maintaining code quality",
+          page: 48,
+        },
+      ],
+      keyTakeaways: [
+        "Write small, focused functions that do one thing well",
+        "Choose descriptive names that reveal intent",
+        "Keep classes small and single-purpose",
+        "Tests are as important as the code they test",
+        "Code should read like well-written prose",
+      ],
+      personalThoughts:
+        "This book challenged my assumptions about what constitutes 'good code'. While I initially focused on making code work, I now understand the importance of making it readable and maintainable. The author's emphasis on treating code as a craft rather than just a technical skill resonated deeply with me.",
+      readingNotes:
+        "Chapter 2 on meaningful names completely changed how I approach variable naming. The section about function organization helped me break down complex methods into simpler ones. The testing chapter introduced me to the concept of TDD, which I started practicing immediately. Found the case studies particularly helpful in seeing the principles applied to real code.",
+    },
+  },
+  {
+    title: "The Pragmatic Programmer",
+    author: "David Thomas, Andrew Hunt",
+    cover:
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A guide to becoming a better programmer through practical examples and pragmatic advice.",
+    genre: "Software Development",
+    link: "https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052",
+  },
+  {
+    title: "Design Patterns",
+    author: "Erich Gamma et al.",
+    cover:
+      "https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=800&q=80",
+    description:
+      "The classic book on design patterns in software development, known as the 'Gang of Four' book.",
+    genre: "Software Architecture",
+    link: "https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612",
+  },
+  {
+    title: "Refactoring",
+    author: "Martin Fowler",
+    cover:
+      "https://images.unsplash.com/photo-1623479322729-28b25c16b011?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A detailed guide to improving the design of existing code through refactoring techniques.",
+    genre: "Software Development",
+    link: "https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672",
+  },
+  {
+    title: "Domain-Driven Design",
+    author: "Eric Evans",
+    cover:
+      "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Tackling complexity in the heart of software by connecting the implementation to an evolving model.",
+    genre: "Software Architecture",
+    link: "https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215",
+  },
+  {
+    title: "Test Driven Development",
+    author: "Kent Beck",
+    cover:
+      "https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A comprehensive guide to writing better software through test-driven development practices.",
+    genre: "Software Testing",
+    link: "https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530",
+  },
+  {
+    title: "The Clean Coder",
+    author: "Robert C. Martin",
+    cover:
+      "https://images.unsplash.com/photo-1623479322729-28b25c16b011?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A code of conduct for professional programmers, focusing on discipline, standards, and ethics.",
+    genre: "Professional Development",
+    link: "https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073",
+  },
+  {
+    title: "Working Effectively with Legacy Code",
+    author: "Michael Feathers",
+    cover:
+      "https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Strategies and techniques for dealing with large, untested legacy code bases.",
+    genre: "Software Development",
+    link: "https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052",
+  },
+  {
+    title: "Patterns of Enterprise Application Architecture",
+    author: "Martin Fowler",
+    cover:
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A comprehensive guide to enterprise software architecture patterns and practices.",
+    genre: "Software Architecture",
+    link: "https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420",
+  },
+  {
+    title: "Building Microservices",
+    author: "Sam Newman",
+    cover:
+      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Designing fine-grained systems and understanding the world of distributed architecture.",
+    genre: "Software Architecture",
+    link: "https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358",
+  },
+];

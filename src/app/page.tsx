@@ -6,6 +6,7 @@ import { WorkExperience } from "@/components/home/work/work-experience";
 import { ArticlesSection } from "@/components/home/articles/articles-section";
 import { SourcesSection } from "@/components/home/sources/sources-section";
 import { TravelSection } from "@/components/home/travel/travel-section";
+import { BooksSection } from "@/components/home/books/books-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <div className="flex-grow grid grid-cols-1 gap-24">
           <WorkExperience variant="preview" />
           <ArticlesSection variant="preview" />
+          <BooksSection />
           <SourcesSection />
           <TravelSection />
         </div>

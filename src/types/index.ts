@@ -43,3 +43,19 @@ export interface TravelLocation {
   coverImage: string;
   photos: TravelPhoto[];
 }
+
+export interface Book {
+  title: string;
+  author: string;
+  cover: string;
+  description: string;
+  genre: string;
+  myPerspective?: string;
+  personalNotes?: {
+    favoriteQuotes?: {
+      quote: string;
+      page?: number;
+      context?: string;
+    }[];
+  };
+}
