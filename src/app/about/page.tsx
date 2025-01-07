@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ProjectsSection } from "@/components/common/projects/projects-section";
 import { TechnicalSkills } from "@/components/about/technical-skills";
 import { WorkExperience } from "@/components/home/work/work-experience";
-import { HeroSection } from "@/components/home/hero/hero-section";
 import { JourneySection } from "@/components/about/journey-section";
 import { PageContainer } from "@/components/layout/page-container";
 import { Project } from "@/types";
@@ -34,7 +33,6 @@ const projects: Project[] = [
 
 export default function AboutPage() {
   useEffect(() => {
-    // Check if there's a hash in the URL
     if (window.location.hash === "#work-experience") {
       const element = document.getElementById("work-experience");
       element?.scrollIntoView({ behavior: "smooth" });
@@ -44,7 +42,6 @@ export default function AboutPage() {
   return (
     <PageContainer>
       <div className="container mx-auto px-4 py-8 space-y-16">
-        <HeroSection variant="about" />
         <JourneySection />
         <div id="work-experience">
           <WorkExperience variant="full" />

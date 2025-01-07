@@ -8,7 +8,7 @@ export function PageContainer({ children }: PageContainerProps) {
   return (
     <div className="min-h-screen bg-background">
       <MainNav />
-      <div className="pt-16">{children}</div>
+      <div className="pt-20">{children}</div>
     </div>
   );
 }
