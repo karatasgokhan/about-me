@@ -28,6 +28,13 @@ interface TripPhoto {
   location: string;
 }
 
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+}
+
 export const workExperience: WorkExperience[] = [
   {
     title: "Frontend Developer",
@@ -570,5 +577,103 @@ export const favoriteBooks: Book[] = [
       "Designing fine-grained systems and understanding the world of distributed architecture.",
     genre: "Software Architecture",
     link: "https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "Personal Portfolio",
+    description:
+      "A modern portfolio website built with Next.js 14, featuring server components, dynamic routing, and smooth animations. Implements responsive design and accessibility best practices.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Shadcn UI",
+    ],
+    link: "https://github.com/yourusername/portfolio",
+    image:
+      "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "E-commerce Dashboard",
+    description:
+      "A comprehensive admin dashboard for managing online stores. Features include real-time analytics, inventory management, and order processing with payment integration.",
+    technologies: [
+      "React",
+      "Redux Toolkit",
+      "Node.js",
+      "MongoDB",
+      "Stripe",
+      "Docker",
+    ],
+    link: "https://github.com/yourusername/ecommerce-dashboard",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "AI Task Manager",
+    description:
+      "An intelligent task management application that uses AI to prioritize and categorize tasks. Includes natural language processing for task creation and smart scheduling.",
+    technologies: [
+      "Vue.js",
+      "Python",
+      "FastAPI",
+      "TensorFlow",
+      "PostgreSQL",
+      "Redis",
+    ],
+    link: "https://github.com/yourusername/ai-task-manager",
+    image:
+      "https://images.unsplash.com/photo-1484557985045-edf25e08da73?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Real-time Chat Platform",
+    description:
+      "A scalable chat application supporting multiple rooms, file sharing, and video calls. Implements WebSocket for real-time communication and WebRTC for video features.",
+    technologies: [
+      "React",
+      "Socket.io",
+      "WebRTC",
+      "Express",
+      "MongoDB",
+      "AWS S3",
+    ],
+    link: "https://github.com/yourusername/chat-platform",
+    image:
+      "https://images.unsplash.com/photo-1461532257246-777de18cd58b?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "DevOps Pipeline Tool",
+    description:
+      "A CI/CD pipeline visualization and management tool. Helps teams monitor deployments, track build status, and manage infrastructure configurations.",
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "Jenkins",
+      "Docker",
+      "Kubernetes",
+      "GraphQL",
+    ],
+    link: "https://github.com/yourusername/devops-pipeline",
+    image:
+      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Mobile Fitness App",
+    description:
+      "A cross-platform fitness application with workout tracking, meal planning, and progress visualization. Includes social features and integration with fitness devices.",
+    technologies: [
+      "React Native",
+      "Redux",
+      "Node.js",
+      "Firebase",
+      "GraphQL",
+      "D3.js",
+    ],
+    link: "https://github.com/yourusername/fitness-app",
+    image:
+      "https://images.unsplash.com/photo-1461773518188-b3e86f98242f?auto=format&fit=crop&w=800&q=80",
   },
 ];
