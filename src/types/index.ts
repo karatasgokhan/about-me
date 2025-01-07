@@ -25,3 +25,11 @@ export interface TravelPhoto {
   alt: string;
   location: string;
 }
+
+export interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  link?: string;
+  image?: string;
+}

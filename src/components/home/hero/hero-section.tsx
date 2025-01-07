@@ -2,9 +2,27 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { FC } from "react";
 
-export const HeroSection: FC = () => {
+interface HeroSectionProps {
+  variant?: "home" | "about";
+}
+
+export const HeroSection: FC<HeroSectionProps> = ({ variant = "home" }) => {
+  const buttonConfig = {
+    home: {
+      text: "More About Me",
+      href: "/about",
+    },
+    about: {
+      text: "Back to Home",
+      href: "/",
+    },
+  };
+
+  const { text, href } = buttonConfig[variant];
+
   return (
     <motion.section
       className="text-center space-y-6 py-20"
@@ -19,12 +37,14 @@ export const HeroSection: FC = () => {
         A passionate web developer with a keen eye for design and a love for
         creating intuitive, user-friendly experiences.
       </p>
-      <Button
-        size="lg"
-        className="mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-      >
-        More About Me
-      </Button>
+      <Link href={href}>
+        <Button
+          size="lg"
+          className="mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          {text}
+        </Button>
+      </Link>
     </motion.section>
   );
 };

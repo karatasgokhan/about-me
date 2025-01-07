@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <PageContainer>
       <main className="container mx-auto px-4 py-8 space-y-24 flex flex-col min-h-screen">
-        <HeroSection />
+        <HeroSection variant="home" />
         <div className="flex-grow grid grid-cols-1 gap-24">
-          <WorkExperience />
+          <WorkExperience variant="preview" />
           <ArticlesSection />
           <SourcesSection />
           <TravelSection />
