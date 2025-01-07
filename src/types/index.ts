@@ -33,7 +33,7 @@ export interface Project {
   description: string;
   technologies: string[];
   link: string;
-  image?: string;
+  image: string;
 }
 
 export interface TravelLocation {
@@ -50,6 +50,7 @@ export interface Book {
   cover: string;
   description: string;
   genre: string;
+  link?: string;
   myPerspective?: string;
   personalNotes?: {
     favoriteQuotes?: {

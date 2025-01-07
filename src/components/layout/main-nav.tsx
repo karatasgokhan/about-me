@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { memo, useCallback } from "react";
+import { memo, useCallback, useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -15,7 +17,6 @@ const navItems = [
   { path: "/sources", label: "Sources" },
 ] as const;
 
-// Separate the logo into its own memoized component
 const Logo = memo(function Logo() {
   return (
     <Link href="/" className="relative group">
@@ -26,7 +27,7 @@ const Logo = memo(function Logo() {
           </div>
           <div className="absolute inset-0 bg-black/10 rounded-xl transform transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 -z-10" />
         </div>
-        <span className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+        <span className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 hidden sm:inline">
           Gökhan KARATAŞ
         </span>
       </div>
@@ -34,22 +35,35 @@ const Logo = memo(function Logo() {
   );
 });
 
-// Separate the nav item into its own memoized component
 const NavItem = memo(function NavItem({
   path,
   label,
   isActive,
+  isMobile,
+  onClick,
 }: {
   path: string;
   label: string;
   isActive: boolean;
+  isMobile?: boolean;
+  onClick?: () => void;
 }) {
   return (
-    <Link href={path} className="relative px-6 py-2">
+    <Link
+      href={path}
+      className={cn(
+        "relative px-6 py-2",
+        isMobile && "w-full text-center py-3 hover:bg-gray-50"
+      )}
+      onClick={onClick}
+    >
       {isActive && (
         <motion.div
-          className="absolute inset-0 bg-white rounded-xl shadow-sm"
-          layoutId="nav-active"
+          className={cn(
+            "absolute inset-0 bg-white rounded-xl shadow-sm",
+            isMobile && "bg-gray-100"
+          )}
+          layoutId={isMobile ? undefined : "nav-active"}
           transition={{
             type: "spring",
             bounce: 0.25,
@@ -69,9 +83,14 @@ const NavItem = memo(function NavItem({
   );
 });
 
-// Main navigation component
 export const MainNav = memo(function MainNav() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu when pathname changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   const getActiveState = useCallback(
     (path: string) => {
@@ -94,7 +113,9 @@ export const MainNav = memo(function MainNav() {
       <nav className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between h-20">
           <Logo />
-          <div className="flex items-center bg-gray-100/50 rounded-2xl p-1.5">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center bg-gray-100/50 rounded-2xl p-1.5">
             {navItems.map((item) => (
               <NavItem
                 key={item.path}
@@ -104,8 +125,45 @@ export const MainNav = memo(function MainNav() {
               />
             ))}
           </div>
-          <div className="w-[180px]" /> {/* Spacer to match logo width */}
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+
+          <div className="hidden md:block w-[180px]" />
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <motion.div
+            className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200/80 md:hidden shadow-lg"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+          >
+            <div className="flex flex-col items-stretch py-2">
+              {navItems.map((item) => (
+                <NavItem
+                  key={item.path}
+                  path={item.path}
+                  label={item.label}
+                  isActive={getActiveState(item.path)}
+                  isMobile
+                  onClick={() => setIsMenuOpen(false)}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
       </nav>
     </motion.header>
   );

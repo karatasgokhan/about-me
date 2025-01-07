@@ -1,40 +1,14 @@
+import {
+  Article,
+  Book,
+  Project,
+  Source,
+  TravelLocation,
+  TravelPhoto,
+  WorkExperience,
+} from "@/types";
+
 // Type definitions
-interface WorkExperience {
-  title: string;
-  company: string;
-  date: string;
-  description: string;
-  logo: string;
-}
-
-interface Article {
-  title: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  content?: string;
-}
-
-interface Source {
-  name: string;
-  icon: string;
-  description: string;
-  link: string;
-}
-
-interface TripPhoto {
-  src: string;
-  alt: string;
-  location: string;
-}
-
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  link: string;
-}
-
 export const workExperience: WorkExperience[] = [
   {
     title: "Frontend Developer",
@@ -214,7 +188,7 @@ export const sources: Source[] = [
   },
 ];
 
-export const tripPhotos: TripPhoto[] = [
+export const tripPhotos: TravelPhoto[] = [
   {
     src: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80",
     alt: "Eiffel Tower",
@@ -457,11 +431,8 @@ export const favoriteBooks: Book[] = [
     description:
       "A handbook of agile software craftsmanship that has helped countless developers write better code.",
     genre: "Software Development",
-    subject: "Software Craftsmanship and Code Quality",
     myPerspective:
       "This book completely changed my approach to writing code. While some examples might be dated, the core principles about writing clean, maintainable code are timeless. It helped me understand that code is read far more often than it is written, and therefore readability should be a top priority.",
-    dateRead: "2023-06-15",
-    rating: 5,
     personalNotes: {
       favoriteQuotes: [
         {
@@ -475,17 +446,6 @@ export const favoriteBooks: Book[] = [
           page: 48,
         },
       ],
-      keyTakeaways: [
-        "Write small, focused functions that do one thing well",
-        "Choose descriptive names that reveal intent",
-        "Keep classes small and single-purpose",
-        "Tests are as important as the code they test",
-        "Code should read like well-written prose",
-      ],
-      personalThoughts:
-        "This book challenged my assumptions about what constitutes 'good code'. While I initially focused on making code work, I now understand the importance of making it readable and maintainable. The author's emphasis on treating code as a craft rather than just a technical skill resonated deeply with me.",
-      readingNotes:
-        "Chapter 2 on meaningful names completely changed how I approach variable naming. The section about function organization helped me break down complex methods into simpler ones. The testing chapter introduced me to the concept of TDD, which I started practicing immediately. Found the case studies particularly helpful in seeing the principles applied to real code.",
     },
   },
   {
