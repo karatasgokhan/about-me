@@ -12,7 +12,10 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, index }: ArticleCardProps) {
-  const slug = article.title.toLowerCase().replace(/\s+/g, "-");
+  const slug = article.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 
   return (
     <motion.div

@@ -5,17 +5,24 @@ import { articles } from "@/data/content";
 import { PageContainer } from "@/components/layout/page-container";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { use } from "react";
 
 interface ArticlePageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
+}
+
+// Create a helper function for consistent slug generation
+function createSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { slug } = use(params);
+  const { slug } = params;
 
   const article = articles.find(
-    (article) => article.title.toLowerCase().replace(/\s+/g, "-") === slug
+    (article) => createSlug(article.title) === slug
   );
 
   if (!article) {
