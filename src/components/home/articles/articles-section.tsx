@@ -5,12 +5,14 @@ import { articles } from "@/data/content";
 import { ArticleCard } from "./article-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
-interface ArticlesSectionProps {
+export function ArticlesSection({
+  variant = "preview",
+}: {
   variant?: "preview" | "full";
-}
-
-export function ArticlesSection({ variant = "preview" }: ArticlesSectionProps) {
+}) {
+  const locale = useLocale();
   const displayedArticles =
     variant === "preview" ? articles.slice(0, 3) : articles;
 
@@ -31,7 +33,7 @@ export function ArticlesSection({ variant = "preview" }: ArticlesSectionProps) {
       </div>
       {variant === "preview" && articles.length > 3 && (
         <div className="text-center mt-8">
-          <Link href="/articles">
+          <Link href={`/${locale}/articles`}>
             <Button
               variant="outline"
               className="hover:bg-gray-100 transition-colors"

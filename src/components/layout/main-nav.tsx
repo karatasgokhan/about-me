@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { memo, useCallback, useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "next-intl";
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -14,12 +15,15 @@ const navItems = [
   { path: "/articles", label: "Articles" },
   { path: "/books", label: "Books" },
   { path: "/projects", label: "Projects" },
+  { path: "/travels", label: "Travels" },
   { path: "/sources", label: "Sources" },
 ] as const;
 
 const Logo = memo(function Logo() {
+  const locale = useLocale();
+
   return (
-    <Link href="/" className="relative group">
+    <Link href={`/${locale}`} className="relative group">
       <div className="flex items-center space-x-3">
         <div className="relative">
           <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold text-lg transform transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
@@ -41,16 +45,20 @@ const NavItem = memo(function NavItem({
   isActive,
   isMobile,
   onClick,
+  locale,
 }: {
   path: string;
   label: string;
   isActive: boolean;
   isMobile?: boolean;
   onClick?: () => void;
+  locale: string;
 }) {
+  const fullPath = path === "/" ? `/${locale}` : `/${locale}${path}`;
+
   return (
     <Link
-      href={path}
+      href={fullPath}
       className={cn(
         "relative px-6 py-2",
         isMobile && "w-full text-center py-3 hover:bg-gray-50"
@@ -86,20 +94,21 @@ const NavItem = memo(function NavItem({
 export const MainNav = memo(function MainNav() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locale = useLocale();
 
-  // Close menu when pathname changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
   const getActiveState = useCallback(
     (path: string) => {
+      const cleanPathname = pathname.replace(`/${locale}`, "");
       if (path === "/") {
-        return pathname === "/";
+        return cleanPathname === "";
       }
-      return pathname?.startsWith(path);
+      return cleanPathname.startsWith(path);
     },
-    [pathname]
+    [pathname, locale]
   );
 
   return (
@@ -122,6 +131,7 @@ export const MainNav = memo(function MainNav() {
                 path={item.path}
                 label={item.label}
                 isActive={getActiveState(item.path)}
+                locale={locale}
               />
             ))}
           </div>
@@ -159,6 +169,7 @@ export const MainNav = memo(function MainNav() {
                   isActive={getActiveState(item.path)}
                   isMobile
                   onClick={() => setIsMenuOpen(false)}
+                  locale={locale}
                 />
               ))}
             </div>

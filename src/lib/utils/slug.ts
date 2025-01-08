@@ -1,6 +1,8 @@
 export function createSlug(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-") // Replace any non-alphanumeric character with a dash
-    .replace(/^-+|-+$/g, ""); // Remove leading and trailing dashes
+    .replace(/[^\w\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/--+/g, "-") // Replace multiple hyphens with single hyphen
+    .trim();
 }

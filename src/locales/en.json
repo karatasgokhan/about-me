@@ -1,0 +1,23 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "articles": "Articles",
+    "books": "Books",
+    "travels": "Travels"
+  },
+  "Common": {
+    "projects": {
+      "view_all": "View All Projects"
+    }
+  },
+  "About": {
+    "journey_title": "My Journey",
+    "journey_description": "...",
+    "technical_skills": "Technical Skills"
+  },
+  "Projects": {
+    "description": "Here are some of the projects I've worked on"
+  }
+}

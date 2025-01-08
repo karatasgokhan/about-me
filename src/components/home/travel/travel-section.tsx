@@ -5,8 +5,13 @@ import { tripPhotos } from "@/data/content";
 import Image from "next/image";
 import Link from "next/link";
 import { createSlug } from "@/lib/utils/slug";
+import { Button } from "@/components/ui/button";
+import { useLocale } from "next-intl";
 
 export function TravelSection() {
+  const locale = useLocale();
+  const displayedPhotos = tripPhotos.slice(0, 6);
+
   return (
     <section className="py-12">
       <motion.h2
@@ -19,14 +24,12 @@ export function TravelSection() {
       </motion.h2>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
-          {tripPhotos.map((photo, index) => (
+          {displayedPhotos.map((photo, index) => (
             <Link
               key={photo.location}
-              href={`/travels/${createSlug(photo.location)}`}
+              href={`/${locale}/travels/${createSlug(photo.location)}`}
               className={`relative block rounded-lg overflow-hidden ${
-                index === 0 || index === 3 || index === 6
-                  ? "md:col-span-2 md:row-span-2"
-                  : ""
+                index === 0 || index === 3 ? "md:col-span-2 md:row-span-2" : ""
               }`}
             >
               <motion.div
@@ -41,7 +44,7 @@ export function TravelSection() {
                   alt={photo.alt}
                   fill
                   sizes={
-                    index === 0 || index === 3 || index === 6
+                    index === 0 || index === 3
                       ? "(max-width: 768px) 100vw, 50vw"
                       : "(max-width: 768px) 50vw, 25vw"
                   }
@@ -57,6 +60,18 @@ export function TravelSection() {
             </Link>
           ))}
         </div>
+        {tripPhotos.length > 6 && (
+          <div className="text-center mt-8">
+            <Link href={`/${locale}/travels`}>
+              <Button
+                variant="outline"
+                className="hover:bg-gray-100 transition-colors"
+              >
+                View All Travels
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

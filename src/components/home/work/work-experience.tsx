@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { workExperience } from "@/data/content";
 import { WorkCard } from "./work-card";
+import { useLocale } from "next-intl";
 
 interface WorkExperienceProps {
   variant?: "preview" | "full";
 }
 
 export function WorkExperience({ variant = "full" }: WorkExperienceProps) {
+  const locale = useLocale();
   const experiences =
     variant === "preview" ? [workExperience[0]] : workExperience;
 
@@ -31,7 +33,7 @@ export function WorkExperience({ variant = "full" }: WorkExperienceProps) {
       </div>
       {variant === "preview" && (
         <div className="text-center mt-8">
-          <Link href="/about#work-experience">
+          <Link href={`/${locale}/about#work-experience`}>
             <Button
               variant="outline"
               className="hover:bg-gray-100 transition-colors"

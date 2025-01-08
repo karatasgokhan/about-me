@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { createSlug } from "@/lib/utils/slug";
+import { useLocale } from "next-intl";
 
 interface BookCardProps {
   book: Book;
@@ -13,7 +14,7 @@ interface BookCardProps {
 }
 
 export function BookCard({ book, index }: BookCardProps) {
-  const slug = createSlug(book.title);
+  const locale = useLocale();
 
   return (
     <motion.div
@@ -21,8 +22,9 @@ export function BookCard({ book, index }: BookCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
+      className="h-full"
     >
-      <Link href={`/books/${slug}`}>
+      <Link href={`/${locale}/books/${createSlug(book.title)}`}>
         <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <div className="relative h-[200px]">
             <Image

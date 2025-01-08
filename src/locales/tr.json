@@ -1,0 +1,19 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "articles": "Makaleler",
+    "books": "Kitaplar",
+    "projects": "Projeler",
+    "travels": "Seyahatler",
+    "sources": "Kaynaklar"
+  },
+  "travels": {
+    "title": "Seyahatlerim",
+    "description": "Detaylı fotoğraflar, hikayeler ve ziyaretlerimden öne çıkanları keşfetmek için herhangi bir destinasyona tıklayın. Her lokasyonun kendine özgü anıları ve deneyimleri var."
+  },
+  "common": {
+    "viewAll": "Tümünü Gör",
+    "readMore": "Devamını Oku"
+  }
+}

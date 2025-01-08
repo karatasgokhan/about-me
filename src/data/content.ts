@@ -39,15 +39,15 @@ export const workExperience: WorkExperience[] = [
 export const articles: Article[] = [
   {
     title: "Building Modern Web Applications with Next.js",
-    date: "2024-01-05",
-    excerpt:
-      "A comprehensive guide to building scalable applications using Next.js and React",
+    date: "2024-01-15",
+    excerpt: "Learn how to build modern web applications using Next.js...",
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
     content: `
-      // Add your full article content here
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua...
+      <p>Next.js has revolutionized the way we build web applications...</p>
+      <h2>Why Next.js?</h2>
+      <p>Next.js provides an excellent developer experience with...</p>
+      <!-- Add more content here -->
     `,
   },
   {
@@ -190,45 +190,218 @@ export const sources: Source[] = [
 
 export const tripPhotos: TravelPhoto[] = [
   {
-    src: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80",
-    alt: "Eiffel Tower",
+    src: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a",
+    alt: "Paris Overview",
     location: "Paris, France",
+    description:
+      "The City of Light, where every street tells a story of romance, art, and history. A city that perfectly blends historical architecture with modern culture.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f",
+        alt: "Eiffel Tower at Night",
+        description:
+          "The iconic Eiffel Tower illuminating the Parisian night sky, a symbol of romance and engineering marvel.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1478391679764-b2d8b3cd1e94",
+        alt: "Louvre Museum",
+        description:
+          "The magnificent Louvre Museum, home to thousands of works of art including the famous Mona Lisa.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+        alt: "Champs-Élysées",
+        description:
+          "The famous Champs-Élysées, one of the world's most beautiful avenues.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a",
+        alt: "Notre-Dame Cathedral",
+        description:
+          "The historic Notre-Dame Cathedral, a masterpiece of French Gothic architecture.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f",
+        alt: "Montmartre",
+        description:
+          "The charming streets of Montmartre, home to artists and the beautiful Sacré-Cœur.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1509439581779-6298f75bf6e5",
+        alt: "Palace of Versailles",
+        description:
+          "The opulent Palace of Versailles, former residence of French royalty.",
+      },
+    ],
   },
   {
-    src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?auto=format&fit=crop&w=800&q=80",
-    alt: "Mountain view",
+    src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6",
+    alt: "Swiss Alps",
     location: "Swiss Alps",
+    description:
+      "A majestic mountain range offering breathtaking views, world-class skiing, and pristine nature.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6",
+        alt: "Mountain Peak",
+        description:
+          "Snow-capped peaks reaching into the clouds, offering spectacular views.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99",
+        alt: "Alpine Lake",
+        description:
+          "Crystal clear alpine lake reflecting the surrounding mountains.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1531879247805-3b5b4b4c4208",
+        alt: "Mountain Village",
+        description:
+          "Charming Swiss village nestled in the valley between towering peaks.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1502786129293-79981df4e689",
+        alt: "Ski Resort",
+        description:
+          "World-class ski slopes offering perfect conditions for winter sports.",
+      },
+    ],
   },
   {
-    src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
-    alt: "Beach sunset",
+    src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+    alt: "Bali Beaches",
     location: "Bali, Indonesia",
+    description:
+      "An island paradise combining pristine beaches, lush landscapes, and rich cultural heritage.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+        alt: "Tropical Beach",
+        description:
+          "Pristine beaches with crystal clear waters and soft white sand.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1512100356356-de1b84283e18",
+        alt: "Rice Terraces",
+        description:
+          "Beautiful emerald rice terraces cascading down the hillsides.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2",
+        alt: "Temple",
+        description:
+          "Ancient temples showcasing Bali's rich cultural heritage.",
+      },
+    ],
   },
   {
-    src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
-    alt: "Tokyo skyline",
+    src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf",
+    alt: "Tokyo City",
     location: "Tokyo, Japan",
+    description:
+      "A dazzling metropolis where tradition meets cutting-edge technology, creating a unique urban experience.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf",
+        alt: "Tokyo Skyline",
+        description:
+          "The stunning Tokyo skyline at night, with the iconic Tokyo Tower illuminating the city.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1557409518-691ebcd96038",
+        alt: "Shibuya Crossing",
+        description:
+          "The famous Shibuya Crossing, the world's busiest pedestrian intersection.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186",
+        alt: "Temple Garden",
+        description:
+          "Traditional Japanese temple gardens offering peace in the heart of the city.",
+      },
+    ],
   },
   {
-    src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
-    alt: "Safari animals",
-    location: "Nairobi, Kenya",
+    src: "https://images.unsplash.com/photo-1552832230-c0197dd311b5",
+    alt: "Rome Colosseum",
+    location: "Rome, Italy",
+    description:
+      "The Eternal City, where ancient history comes alive through magnificent architecture and rich culture.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1552832230-c0197dd311b5",
+        alt: "Colosseum",
+        description:
+          "The iconic Colosseum, a testament to ancient Roman engineering and architecture.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1525874684015-58379d421a52",
+        alt: "Vatican",
+        description:
+          "The magnificent St. Peter's Basilica in Vatican City, center of the Catholic Church.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1529260830199-42c24126f198",
+        alt: "Trevi Fountain",
+        description:
+          "The beautiful Trevi Fountain, where visitors toss coins to ensure their return to Rome.",
+      },
+    ],
   },
   {
-    src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f",
+    alt: "Santorini Vista",
+    location: "Santorini, Greece",
+    description:
+      "A stunning island paradise known for its white-washed buildings, blue domes, and spectacular sunsets.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f",
+        alt: "Oia Sunset",
+        description:
+          "The picturesque village of Oia, famous for its stunning sunset views.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1507501336603-6e31db2be093",
+        alt: "Blue Domes",
+        description:
+          "Iconic blue-domed churches against the backdrop of the Aegean Sea.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1533105079780-92b9be482077",
+        alt: "Caldera View",
+        description:
+          "Breathtaking views of the volcanic caldera from clifftop villages.",
+      },
+    ],
+  },
+  {
+    src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7",
     alt: "Northern Lights",
     location: "Reykjavik, Iceland",
+    description:
+      "A land of fire and ice, where natural wonders create an otherworldly landscape.",
+    photos: [
+      {
+        src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7",
+        alt: "Aurora Borealis",
+        description:
+          "The magical Northern Lights dancing across the Arctic sky.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1476610182048-b716b8518aae",
+        alt: "Geysir",
+        description:
+          "The powerful Strokkur geyser erupting in the geothermal area.",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1504893524553-b855bce32c67",
+        alt: "Black Sand Beach",
+        description: "Dramatic black sand beaches with unique basalt columns.",
+      },
+    ],
   },
-  {
-    src: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
-    alt: "Colosseum",
-    location: "Rome, Italy",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1587139223877-04cb899fa3e8?auto=format&fit=crop&w=800&q=80",
-    alt: "Great Barrier Reef",
-    location: "Queensland, Australia",
-  },
+  // You can add more locations with similar detailed structure
 ];
 
 export const travelLocations: TravelLocation[] = [
@@ -542,16 +715,10 @@ export const favoriteBooks: Book[] = [
 
 export const projects: Project[] = [
   {
-    title: "Personal Portfolio",
+    title: "Portfolio Website",
     description:
-      "A modern portfolio website built with Next.js 14, featuring server components, dynamic routing, and smooth animations. Implements responsive design and accessibility best practices.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Shadcn UI",
-    ],
+      "Personal portfolio website built with Next.js and TailwindCSS, featuring responsive design, dark mode, and internationalization",
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     link: "https://github.com/yourusername/portfolio",
     image:
       "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=800&q=80",
@@ -559,15 +726,8 @@ export const projects: Project[] = [
   {
     title: "E-commerce Dashboard",
     description:
-      "A comprehensive admin dashboard for managing online stores. Features include real-time analytics, inventory management, and order processing with payment integration.",
-    technologies: [
-      "React",
-      "Redux Toolkit",
-      "Node.js",
-      "MongoDB",
-      "Stripe",
-      "Docker",
-    ],
+      "A comprehensive admin dashboard for managing online stores, featuring real-time analytics and inventory management",
+    technologies: ["React", "Redux", "Node.js", "MongoDB", "Stripe"],
     link: "https://github.com/yourusername/ecommerce-dashboard",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
@@ -575,15 +735,8 @@ export const projects: Project[] = [
   {
     title: "AI Task Manager",
     description:
-      "An intelligent task management application that uses AI to prioritize and categorize tasks. Includes natural language processing for task creation and smart scheduling.",
-    technologies: [
-      "Vue.js",
-      "Python",
-      "FastAPI",
-      "TensorFlow",
-      "PostgreSQL",
-      "Redis",
-    ],
+      "Smart task management app using AI to prioritize and categorize tasks, with natural language processing",
+    technologies: ["Vue.js", "Python", "FastAPI", "TensorFlow", "PostgreSQL"],
     link: "https://github.com/yourusername/ai-task-manager",
     image:
       "https://images.unsplash.com/photo-1484557985045-edf25e08da73?auto=format&fit=crop&w=800&q=80",
@@ -591,15 +744,8 @@ export const projects: Project[] = [
   {
     title: "Real-time Chat Platform",
     description:
-      "A scalable chat application supporting multiple rooms, file sharing, and video calls. Implements WebSocket for real-time communication and WebRTC for video features.",
-    technologies: [
-      "React",
-      "Socket.io",
-      "WebRTC",
-      "Express",
-      "MongoDB",
-      "AWS S3",
-    ],
+      "Scalable chat application supporting multiple rooms, file sharing, and video calls using WebRTC",
+    technologies: ["React", "Socket.io", "WebRTC", "Express", "MongoDB"],
     link: "https://github.com/yourusername/chat-platform",
     image:
       "https://images.unsplash.com/photo-1461532257246-777de18cd58b?auto=format&fit=crop&w=800&q=80",
@@ -607,15 +753,8 @@ export const projects: Project[] = [
   {
     title: "DevOps Pipeline Tool",
     description:
-      "A CI/CD pipeline visualization and management tool. Helps teams monitor deployments, track build status, and manage infrastructure configurations.",
-    technologies: [
-      "Angular",
-      "TypeScript",
-      "Jenkins",
-      "Docker",
-      "Kubernetes",
-      "GraphQL",
-    ],
+      "CI/CD pipeline visualization and management tool for monitoring deployments and build status",
+    technologies: ["Angular", "TypeScript", "Jenkins", "Docker", "Kubernetes"],
     link: "https://github.com/yourusername/devops-pipeline",
     image:
       "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80",
@@ -623,17 +762,46 @@ export const projects: Project[] = [
   {
     title: "Mobile Fitness App",
     description:
-      "A cross-platform fitness application with workout tracking, meal planning, and progress visualization. Includes social features and integration with fitness devices.",
-    technologies: [
-      "React Native",
-      "Redux",
-      "Node.js",
-      "Firebase",
-      "GraphQL",
-      "D3.js",
-    ],
+      "Cross-platform fitness application with workout tracking, meal planning, and progress visualization",
+    technologies: ["React Native", "Redux", "Node.js", "Firebase", "GraphQL"],
     link: "https://github.com/yourusername/fitness-app",
     image:
       "https://images.unsplash.com/photo-1461773518188-b3e86f98242f?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Smart Home IoT Platform",
+    description:
+      "IoT platform for managing and monitoring smart home devices with real-time data visualization",
+    technologies: ["React", "Node.js", "MQTT", "InfluxDB", "Grafana"],
+    link: "https://github.com/yourusername/smart-home",
+    image:
+      "https://images.unsplash.com/photo-1558002038-bb4237b50680?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Learning Management System",
+    description:
+      "Educational platform with course management, student progress tracking, and interactive learning materials",
+    technologies: ["Next.js", "Django", "PostgreSQL", "AWS", "Redis"],
+    link: "https://github.com/yourusername/lms-platform",
+    image:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Blockchain Wallet",
+    description:
+      "Cryptocurrency wallet supporting multiple chains with transaction tracking and DeFi integration",
+    technologies: ["React", "Web3.js", "Solidity", "Ethers.js", "TypeScript"],
+    link: "https://github.com/yourusername/crypto-wallet",
+    image:
+      "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Weather Forecast App",
+    description:
+      "Weather application with real-time updates, location-based forecasts, and severe weather alerts",
+    technologies: ["React", "Redux", "Node.js", "OpenWeather API", "PWA"],
+    link: "https://github.com/yourusername/weather-app",
+    image:
+      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80",
   },
 ];

@@ -5,8 +5,10 @@ import { favoriteBooks } from "@/data/content";
 import { BookCard } from "./book-card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "next-intl";
 
 export function BooksSection() {
+  const locale = useLocale();
   const displayedBooks = favoriteBooks.slice(0, 3);
 
   return (
@@ -27,7 +29,7 @@ export function BooksSection() {
         </div>
         {favoriteBooks.length > 3 && (
           <div className="text-center mt-8">
-            <Link href="/books">
+            <Link href={`/${locale}/books`}>
               <Button
                 variant="outline"
                 className="hover:bg-gray-100 transition-colors"
