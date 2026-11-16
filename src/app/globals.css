@@ -1,46 +1,252 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+@theme {
+  --color-paper: #f1eee6;
+  --color-paper-2: #e4dfd2;
+  --color-ink: #121210;
+  --color-ink-2: #1f1f1b;
+  --color-mute: #5a574f;
+  --color-dim: #a8a497;
+  --color-signal: #ff4a1c;
+  --color-minus: #a8240a;
+  --color-plus: #1b6e45;
+  --color-plus-bright: #63d6a0;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-  }
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
+
   body {
-    @apply bg-background text-foreground;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  ins {
+    text-decoration: none;
+  }
+}
+
+/* Condensed cut of the display face */
+.display {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  letter-spacing: -0.035em;
+}
+
+/* ---------- Hero: "hydration" ---------- */
+
+.word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 0.04em 0.16em;
+  margin: 0 -0.04em -0.16em;
+}
+
+.word > span {
+  display: inline-block;
+  animation: rise 0.9s var(--ease-out-soft) both;
+  animation-delay: calc(480ms + var(--i) * 70ms);
+}
+
+.word em {
+  background: linear-gradient(var(--color-signal), var(--color-signal)) no-repeat 0 86% / 100% 0.12em;
+}
+
+.status {
+  display: inline-grid;
+}
+
+.status > * {
+  grid-area: 1 / 1;
+}
+
+.status-server {
+  animation: leave 0.3s ease-in 0.45s both;
+}
+
+.status-hydrated {
+  animation: enter 0.35s var(--ease-out-soft) 0.7s both;
+}
+
+.fade-up {
+  animation: enter 0.7s var(--ease-out-soft) both;
+  animation-delay: calc(900ms + var(--i, 0) * 90ms);
+}
+
+/* ---------- Scroll reveals ---------- */
+
+.reveal-line {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+[data-inview="true"] .reveal-line {
+  animation: enter 0.4s var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 75ms);
+}
+
+/* ---------- Waterfall ---------- */
+
+.track {
+  position: relative;
+  height: 1.5rem;
+  background-image: linear-gradient(to right, rgb(241 238 230 / 0.1) 1px, transparent 1px);
+  background-size: calc(100% / var(--years)) 100%;
+}
+
+.bar {
+  position: absolute;
+  top: 50%;
+  height: 10px;
+  margin-top: -5px;
+  min-width: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--color-paper);
+  transition: background-color 0.2s;
+}
+
+[data-inview="true"] .bar {
+  animation: grow 0.8s var(--ease-out-soft) both;
+  animation-delay: calc(200ms + var(--i) * 120ms);
+}
+
+.bar[data-kind="edu"] {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-dim) 0 2px,
+    transparent 2px 5px
+  );
+  outline: 1px solid var(--color-dim);
+  outline-offset: -1px;
+}
+
+[aria-selected="true"] .bar[data-kind="work"] {
+  background: var(--color-signal);
+}
+
+[aria-selected="true"] .bar[data-kind="edu"] {
+  outline-color: var(--color-signal);
+}
+
+.bar[data-pending="true"]::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: currentColor;
+  color: var(--color-signal);
+  animation: ping 1.8s ease-out infinite;
+}
+
+.panel-in {
+  animation: enter 0.35s var(--ease-out-soft) both;
+}
+
+.blink {
+  animation: blink 1.2s steps(2, jump-none) infinite;
+}
+
+/* ---------- Links ---------- */
+
+.big-link .arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out-soft);
+}
+
+.big-link:hover .arrow,
+.big-link:focus-visible .arrow {
+  transform: translate(0.12em, -0.12em);
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes rise {
+  from {
+    transform: translateY(115%);
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes leave {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ping {
+  0% {
+    box-shadow: 0 0 0 0 rgb(255 74 28 / 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 9px rgb(255 74 28 / 0);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,16 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ["api.dicebear.com", "images.unsplash.com"],
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60,
-  },
-  reactStrictMode: true,
-  swcMinify: true,
-  trailingSlash: false,
-  typescript: {
-    ignoreBuildErrors: false,
+import type { NextConfig } from "next";
+
+const config: NextConfig = {
+  async redirects() {
+    return [{ source: "/", destination: "/en", permanent: false }];
   },
 };
 
-module.exports = nextConfig;
+export default config;

@@ -1,26 +1,38 @@
-"use client";
+import { notFound } from "next/navigation";
+import { Career } from "@/components/career/Career";
+import { Contact } from "@/components/Contact";
+import { Hero } from "@/components/Hero";
+import { Masthead } from "@/components/Masthead";
+import { Skills } from "@/components/Skills";
+import { getDictionary } from "@/content/dictionary";
+import { careerStart, isLocale } from "@/content/profile";
+import { toYM, wholeYearsBetween } from "@/lib/timeline";
 
-import { PageContainer } from "@/components/layout/page-container";
-import { HeroSection } from "@/components/home/hero/hero-section";
-import { WorkExperience } from "@/components/home/work/work-experience";
-import { ArticlesSection } from "@/components/home/articles/articles-section";
-import { SourcesSection } from "@/components/home/sources/sources-section";
-import { TravelSection } from "@/components/home/travel/travel-section";
-import { BooksSection } from "@/components/home/books/books-section";
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
 
-export default function Home() {
+  const t = getDictionary(locale);
+  // The page is statically generated, so "now" is the time of the last build.
+  const today = new Date();
+  const now = toYM(today);
+  const years = wholeYearsBetween(careerStart, now);
+
   return (
-    <PageContainer>
-      <main className="container mx-auto px-4 py-8 space-y-12 md:space-y-24 flex flex-col min-h-screen">
-        <HeroSection variant="home" />
-        <div className="flex-grow grid grid-cols-1 gap-12 md:gap-24">
-          <WorkExperience variant="preview" />
-          <ArticlesSection variant="preview" />
-          <BooksSection />
-          <SourcesSection />
-          <TravelSection />
-        </div>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-10 focus:bg-ink focus:px-3 focus:py-2 focus:font-mono focus:text-xs focus:text-paper"
+      >
+        {t.skip}
+      </a>
+      <Masthead locale={locale} t={t.masthead} />
+      <main id="main">
+        <Hero locale={locale} years={years} t={t.hero} />
+        <Career locale={locale} now={now} t={t.career} />
+        <Skills years={years} t={t.skills} />
       </main>
-    </PageContainer>
+      <Contact year={today.getFullYear()} t={t.contact} />
+    </>
   );
 }
